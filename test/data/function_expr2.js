@@ -1,0 +1,1 @@
+f = function() { var x = 23; return x; };
