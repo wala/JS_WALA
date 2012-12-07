@@ -1,0 +1,8 @@
+(function(__global) {
+    var tmp0, tmp1;
+    tmp1 = function g() {
+        return;
+    };
+    tmp0 = "f";
+    __global[tmp0] = tmp1;
+})(this);
