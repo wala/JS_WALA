@@ -1,5 +1,3 @@
-(function(__global) {
-    lbl: {
-        break lbl;
-    }
-})(this);
+lbl: {
+    break lbl;
+}

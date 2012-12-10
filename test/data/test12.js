@@ -1,1 +1,1 @@
-(function(__global) {})(this);
+var x;
