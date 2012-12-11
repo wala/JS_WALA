@@ -1,0 +1,1 @@
+var x = window === this ? 23 : 42;
