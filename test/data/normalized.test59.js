@@ -18,6 +18,7 @@
             tmp6 = "g";
             x = tmp5[tmp6];
         }
+        {}
         return;
     };
     tmp0 = "f";

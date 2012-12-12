@@ -7,7 +7,13 @@ function runtest(test, input_file, expected_file) {
   var input = esprima.parse(fs.readFileSync(input_file, 'utf-8')),
       expected = esprima.parse(fs.readFileSync(expected_file, 'utf-8'));
   var normalized = normalizer.normalize(input);
-  test.equal(escodegen.generate(expected), escodegen.generate(normalized));
+  var expected_str = escodegen.generate(expected),
+      actual_str = escodegen.generate(normalized);
+  if(expected_str !== actual_str) {
+    console.log("Expected:\n" + expected_str);
+    console.log("Actual:\n" + actual_str);
+  }
+  test.equal(expected_str, actual_str);
   test.done();
 }
 

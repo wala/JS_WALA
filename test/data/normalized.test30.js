@@ -18,4 +18,5 @@
     } else {
         tmp4 = tmp0;
     }
+    {}
 })(this);
