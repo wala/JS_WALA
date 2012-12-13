@@ -9,18 +9,18 @@
     tmp4 = "o";
     tmp3 = __global[tmp4];
     tmp6 = "alert";
-    tmp10 = tmp6 in tmp3;
-    if (tmp10) {
+    tmp7 = tmp6 in tmp3;
+    if (tmp7) {
         tmp5 = tmp3[tmp6];
     } else {
         tmp5 = __global[tmp6];
     }
-    tmp8 = "x";
-    tmp11 = tmp8 in tmp3;
-    if (tmp11) {
-        tmp7 = tmp3[tmp8];
+    tmp9 = "x";
+    tmp10 = tmp9 in tmp3;
+    if (tmp10) {
+        tmp8 = tmp3[tmp9];
     } else {
-        tmp7 = __global[tmp8];
+        tmp8 = __global[tmp9];
     }
-    tmp9 = tmp5(tmp7);
+    tmp11 = tmp5(tmp8);
 })(this);
