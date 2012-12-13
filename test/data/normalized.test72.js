@@ -1,5 +1,5 @@
 (function(__global) {
-    var tmp0, tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, tmp8, tmp9, tmp10, tmp11;
+    var tmp0, tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, tmp8, tmp9, tmp10, tmp11, tmp12, tmp13;
     tmp2 = 42;
     tmp1 = {
         x: tmp2
@@ -22,5 +22,12 @@
     } else {
         tmp8 = __global[tmp9];
     }
-    tmp11 = tmp5(tmp8);
+    tmp12 = 'alert';
+    tmp13 = tmp12 in tmp3;
+    if(tmp13) {
+	tmp11 = tmp3[tmp12](tmp8);
+    } else {
+	tmp11 = tmp5(tmp8);	
+    }
+    {}
 })(this);

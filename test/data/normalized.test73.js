@@ -1,7 +1,7 @@
 (function(__global) {
     var tmp0, tmp1;
     tmp1 = function f() {
-        var o, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, tmp8, tmp9, tmp10;
+        var o, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, tmp8, tmp9, tmp10, tmp11, tmp12;
         tmp2 = 42;
         o = {
             x: tmp2
@@ -21,7 +21,14 @@
         } else {
             tmp7 = __global[tmp8];
         }
-        tmp10 = tmp4(tmp7);
+        tmp11 = 'alert';
+        tmp12 = tmp11 in tmp3;
+        if(tmp12) {
+	    tmp10 = tmp3[tmp11](tmp7);
+	} else {
+            tmp10 = tmp4(tmp7);
+        }
+	{}
         return;
     };
     tmp0 = "f";
