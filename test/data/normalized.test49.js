@@ -1,17 +1,11 @@
 (function(__global) {
     var tmp0, tmp1, tmp2, tmp3, tmp4;
-    tmp4 = function getPlatform() {
-        var tmp5, tmp6, tmp7, tmp8;
+    tmp4 = function() {
+        var tmp5, tmp6, tmp7;
         tmp7 = "exports";
         tmp6 = __global[tmp7];
-        tmp8 = tmp6;
         if (tmp6) {
             tmp5 = "node";
-        } else {
-            {}
-        }
-        if (tmp8) {
-            {}
         } else {
             tmp5 = "browser";
         }

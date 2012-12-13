@@ -1,6 +1,6 @@
 (function(__global) {
     var tmp0, tmp1;
-    tmp1 = function extend(dest, src) {
+    tmp1 = function (dest, src) {
         var p, tmp2, tmp4, tmp5, tmp6, tmp7, tmp8;
         tmp2 = src;
         tmp3: {

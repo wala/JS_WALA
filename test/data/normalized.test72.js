@@ -29,5 +29,4 @@
     } else {
 	tmp11 = tmp5(tmp8);	
     }
-    {}
 })(this);

@@ -1,8 +1,8 @@
 (function(__global) {
     var tmp0, tmp1;
-    tmp1 = function foo() {
+    tmp1 = function() {
         var bar, tmp2;
-        bar = function bar() {
+        bar = function() {
             return;
         };
         tmp2 = bar;

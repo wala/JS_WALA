@@ -11,7 +11,6 @@
         tmp7 = "They are the same!";
         tmp8 = tmp5(tmp7);
     } else {
-        {}
+	;
     }
-    {}
 })(this);

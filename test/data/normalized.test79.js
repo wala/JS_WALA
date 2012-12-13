@@ -1,6 +1,6 @@
 (function (__global) {
     var tmp0, tmp1, tmp15, tmp16;
-    tmp1 = function f(o) {
+    tmp1 = function(o) {
         var g, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, tmp8, tmp9, tmp10, tmp11, tmp12, tmp13, tmp14;
         tmp2 = o;
         tmp4 = 'g';
@@ -31,13 +31,11 @@
         } else {
             tmp12 = tmp9();
         }
-        {
-        }
         return;
     };
     tmp0 = 'f';
     __global[tmp0] = tmp1;
-    tmp16 = function h() {
+    tmp16 = function() {
         return;
     };
     tmp15 = 'h';

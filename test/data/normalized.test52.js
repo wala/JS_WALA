@@ -15,9 +15,8 @@
                     if (tmp10) {
                         break tmp8;
                     } else {
-                        {}
+			;
                     }
-		    {}
                 }
                 tmp6 = i;
                 tmp7 = 1;

@@ -4,6 +4,6 @@
         tmp0 = "";
         throw tmp0;
     } catch (e) {
-        {}
+	;
     }
 })(this);

@@ -19,6 +19,5 @@
             tmp13 = tmp10(tmp12);
             break tmp1;
         }
-	{}
     }
 })(this);

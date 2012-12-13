@@ -5,10 +5,9 @@
         tmp2 = 23;
         tmp3 = tmp0 === tmp2;
         if (tmp3) {
-            {}
+	    ;
         } else {
-            {}
+	    ;
         }
-	{}
     }
 })(this);

@@ -6,9 +6,8 @@
         if (tmp1) {
             return;
         } else {
-            {}
+	    ;
         }
-	{}
         return;
     };
     tmp2 = tmp0();

@@ -1,6 +1,6 @@
 (function(__global) {
     var tmp0, tmp1;
-    tmp1 = function f(i) {
+    tmp1 = function(i) {
         var tmp2, tmp3, tmp4;
         tmp2 = i;
         tmp3 = i;

@@ -1,15 +1,12 @@
 (function (__global) {
     var tmp0, tmp1;
-    tmp1 = function jQuery(a, c) {
+    tmp1 = function (a, c) {
         var tmp2;
         tmp2 = a;
         if (tmp2) {
             return;
         } else {
-            {
-            }
-        }
-        {
+	    ;
         }
         return;
     };

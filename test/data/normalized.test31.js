@@ -1,6 +1,6 @@
 (function(__global) {
     var tmp0, tmp1;
-    tmp1 = function count() {
+    tmp1 = function() {
         var i, tmp2, tmp5, tmp6, tmp7, tmp8, tmp9, tmp10, tmp11, tmp12;
         i = 0;
         tmp5 = i;

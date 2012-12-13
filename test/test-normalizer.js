@@ -11,7 +11,7 @@ var normalizer = require("../lib/normalizer"),
 function runtest(test, input_file, expected_file) {
   var input = esprima.parse(fs.readFileSync(input_file, 'utf-8')),
       expected = esprima.parse(fs.readFileSync(expected_file, 'utf-8'));
-  var normalized = normalizer.normalize(input, { backwards_compatible: true });
+  var normalized = normalizer.normalize(input);
   var expected_str = escodegen.generate(expected),
       actual_str = escodegen.generate(normalized);
   if(expected_str !== actual_str) {
