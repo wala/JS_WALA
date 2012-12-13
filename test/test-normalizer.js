@@ -1,3 +1,8 @@
+/**
+ * Unit tests for the normalizer. The actual test data is in directory 'data/'.
+ * For every test 'foo', 'data/foo.js' is the original file, while
+ * 'data/normalized.foo.js' is the expected result of normalization.
+ */
 var normalizer = require("../lib/normalizer"),
     esprima = require("esprima"),
     escodegen = require("escodegen"),
