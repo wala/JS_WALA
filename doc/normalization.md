@@ -63,4 +63,4 @@ If the normalizer is passed the `unfold_ifs` option, `if` statements are further
 non-trivial, i.e., contains a non-empty statement.
 
 If the normalizer is passed the `unify_ret` option, every function only contains one single `return` statement at the very end of the
-function. The normalized program then will not contain empty return statements of the form `return;`. (*This is not implemented yet.*)
+function. The normalized program then will not contain empty return statements of the form `return;`.

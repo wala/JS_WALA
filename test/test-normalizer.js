@@ -2,6 +2,10 @@
  * Unit tests for the normalizer. The actual test data is in directory 'data/'.
  * For every test 'foo', 'data/foo.js' is the original file, while
  * 'data/normalized.foo.js' is the expected result of normalization.
+ * 
+ * The original file can optionally start with a '//' comment line containing
+ * a JSON encoding of the option object to pass to the normalizer (see the
+ * unify_ret*.js files for examples).
  */
 var normalizer = require("../lib/normalizer"),
     esprima = require("esprima"),
@@ -9,9 +13,17 @@ var normalizer = require("../lib/normalizer"),
     fs = require("fs");
 
 function runtest(test, input_file, expected_file) {
-  var input = esprima.parse(fs.readFileSync(input_file, 'utf-8')),
+  var input_src = fs.readFileSync(input_file, 'utf-8');
+  var input = esprima.parse(input_src),
       expected = esprima.parse(fs.readFileSync(expected_file, 'utf-8'));
-  var normalized = normalizer.normalize(input);
+  
+  var options = null;
+  if(input_src.substring(0, 2) === '//') {
+    debugger;
+    options = JSON.parse(input_src.substring(2, input_src.indexOf('\n')));
+  }
+  
+  var normalized = normalizer.normalize(input, options);
   var expected_str = escodegen.generate(expected),
       actual_str = escodegen.generate(normalized);
   if(expected_str !== actual_str) {
