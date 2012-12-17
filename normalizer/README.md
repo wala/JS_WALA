@@ -10,3 +10,4 @@ Currently, the following flags are supported:
   * `backwards_compatible`: normalize in a way compatible with a previous implementation; intentionally not documented (very much); will eventually go away
   * `reference_errors`: if set to true, read accesses to global variables will be normalized in such a way that they throw a ReferenceError for undefined and undeclared globals; since this leads to significant code bloat in programs using the DOM and the standard library, this flag is set to false by default, meaning that reads of undefined/undeclared globals return undefined and don't throw an exception
   * `unfold_ifs`: if set to true, if statements will be unfolded so that at most one branch is non-trivial
+  * `unify_ret`: rewrite functions so that they only have one single `return` statement at the very end
