@@ -18,10 +18,8 @@ function runtest(test, input_file, expected_file) {
       expected = esprima.parse(fs.readFileSync(expected_file, 'utf-8'));
   
   var options = null;
-  if(input_src.substring(0, 2) === '//') {
-    debugger;
+  if(input_src.substring(0, 2) === '//')
     options = JSON.parse(input_src.substring(2, input_src.indexOf('\n')));
-  }
   
   var normalized = normalizer.normalize(input, options);
   var expected_str = escodegen.generate(expected),
