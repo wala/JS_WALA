@@ -33,6 +33,7 @@ A program in JavaScript Normal Form (JSNF) obeys the following grammar:
              |  break l;
              |  throw x;
              |  ;
+             |  debugger;
              |  l: Stmt
              |  if(x) { Stmt+ } else { Stmt+ }
              |  while(x) { Stmt+ }
