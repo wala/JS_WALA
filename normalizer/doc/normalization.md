@@ -69,10 +69,9 @@ Position information
 If the original AST has position information, then so does the normalized AST, with every normarized AST node having the same position as the node it originated from.
 
 However, we do not use the Esprima position annotations, which somewhat awkwardly distribute position information across several different properties.
-Instead, the position information for node `nd` is stored in `nd.attr.pos`, and is represented as an object constructed by function `Position` (defined in `lib/position.js`), which has properties `url`, `start_line`, `start_offset`, `end_line` and `end_offset`.
-The `url` property stores the URL of the enclosing script, `start_line` and `end_line` correspond to Esprima's `loc.start.line` and `loc.end.line`, whereas `start_offset` and `end_offset` are character offsets from the beginning of the file, corresponding to `range[0]` and `range[1]` in Esprima.
+Instead, the position information for node `nd` is stored in `nd.attr.pos`, and uses the ADT defined in module `common/lib/position.js`.
 
-Esprima ASTs do not usually store a program's URL.
+Source positions include the URL of their containing script, but Esprima ASTs do not usually store a program's URL.
 When the normalizer is passed an AST, it first checks whether the root node has the (non-standard) property `url`, and if so takes this to be the program's URL.
 Otherwise, it checks whether the `options` object (see above) has a `url` property.
-If neither is the case, the URL defaults to `<UNKNOWN>`.
+If neither is the case, the URL defaults to `<unknown>`.

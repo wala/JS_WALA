@@ -10,7 +10,14 @@
  *******************************************************************************/
 
 /**
- * ADT for representing source positions.
+ * ADT for representing source positions identified by a URL, a start line, a start
+ * offset (i.e., character offset from the beginning of the file), an end line, and
+ * an end offset.
+ * 
+ * The start line corresponds to Esprima's loc.start.line, the start offset to
+ * range[0], and similar for the end line and end offset.
+ * 
+ * For compatibility with Esprima, line numbering should normally be 1-based.
  */
 
 if(typeof define !== 'function') {
@@ -46,7 +53,7 @@ define(function(require, exports) {
            o.end_offset === this.end_offset;
   };
   
-  var DUMMY_POS = new Position("unknown", -1, -1, -1, -1);
+  var DUMMY_POS = new Position(null, -1, -1, -1, -1);
   
   return {
     Position: Position,

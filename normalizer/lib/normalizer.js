@@ -129,7 +129,7 @@ define(function(require, exports) {
     }
     
     /** Determine URL of program */
-    var url = nd.url || options.url || "<UNKNOWN>";
+    var url = nd.url || options.url || "<unknown>";
     
     /** Utility function to copy position information of old_node onto new_nodes,
      *  unless they already have positions. This copy is recursive, traversing
