@@ -17,6 +17,8 @@ if(typeof define !== 'function') {
 }
 
 define(function(require, exports) {
+  var position = require('./position');
+  
   // constructor signatures; arguments in angle brackets are terminal children, the others subtrees
   var signatures = {
       AssignmentExpression: [ '<operator>', 'left', 'right'],
@@ -144,6 +146,18 @@ define(function(require, exports) {
   };
   
   exports.getPosition = function(nd) {
+    if(!exports.hasPosition(nd)) {
+      var pos = position.DUMMY_POS.clone();
+      if(nd.loc) {
+        pos.start_line = nd.loc.start.line;
+        pos.end_line = nd.loc.start.line;
+      }
+      if(nd.range) {
+        pos.start_offset = nd.range[0];
+        pos.end_offset = nd.range[1];
+      }
+      exports.setAttribute(nd, 'pos', pos);
+    }
     return exports.getAttribute(nd, 'pos');
   };
   

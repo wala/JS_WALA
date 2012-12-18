@@ -18,11 +18,11 @@ if(typeof define !== 'function') {
 }
 
 define(function(require, exports) {
-  var ast = require('./ast'),
+  var ast = require('../../common/lib/ast'),
       cflow = require('./cflow'),
       decls = require('./decls'),
       scopes = require('./scope'),
-      position = require('./position');
+      position = require('../../common/lib/position');
 
   // for Array.prototype.flatmap
   require('./util');
