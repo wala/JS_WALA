@@ -104,6 +104,7 @@ define(function(require, exports) {
     return res;
   };
 
+  // simple debug printing function
   var dump = exports.dump = function(nd) {
     if(Array.isArray(nd))
       return "[" + nd.map(dump).join() + "]";
@@ -124,6 +125,19 @@ define(function(require, exports) {
     nd.attr = nd.attr || {};
     nd.attr[name] = value;
     return nd;
+  };
+  
+  // positions are attached as attributes
+  exports.hasPosition = function(nd) {
+    return !!exports.getAttribute(nd, 'pos');
+  };
+  
+  exports.getPosition = function(nd) {
+    return exports.getAttribute(nd, 'pos');
+  };
+  
+  exports.setPosition = function(nd, pos) {
+    exports.setAttribute(nd, 'pos', pos);
   };
   
   for(var p in signatures)

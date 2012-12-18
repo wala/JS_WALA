@@ -59,3 +59,19 @@ Note that `for` and `do` loops are desugared into `while` loops, `continue` stat
 If the normalizer is passed the `unfold_ifs` option, `if` statements are further simplified so that at most one of their branches is non-trivial, i.e., contains a non-empty statement.
 
 If the normalizer is passed the `unify_ret` option, every function only contains one single `return` statement at the very end of the function; all other `return` statements are converted into assignments to a result variable and a following `break` statement. The normalized program will not contain empty return statements of the form `return;`.
+
+
+
+Position information
+--------------------
+
+If the original AST has position information, then so does the normalized AST, with every normarized AST node having the same position as the node it originated from.
+
+However, we do not use the Esprima position annotations, which somewhat awkwardly distribute position information across several different properties.
+Instead, the position information for node `nd` is stored in `nd.attr.pos`, and is represented as an object constructed by function `Position` (defined in `lib/position.js`), which has properties `url`, `start_line`, `start_offset`, `end_line` and `end_offset`.
+The `url` property stores the URL of the enclosing script, `start_line` and `end_line` correspond to Esprima's `loc.start.line` and `loc.end.line`, whereas `start_offset` and `end_offset` are character offsets from the beginning of the file, corresponding to `range[0]` and `range[1]` in Esprima.
+
+Esprima ASTs do not usually store a program's URL.
+When the normalizer is passed an AST, it first checks whether the root node has the (non-standard) property `url`, and if so takes this to be the program's URL.
+Otherwise, it checks whether the `options` object (see above) has a `url` property.
+If neither is the case, the URL defaults to `<UNKNOWN>`.
