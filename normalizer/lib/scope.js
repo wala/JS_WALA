@@ -8,11 +8,13 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
+
 /**
  * Scope objects keep track of name binding. Each scope object represents
  * either the global scope, a function scope, a catch clause scope, or
  * a 'with' scope.
  */
+
 if(typeof define !== 'function') {
   var define = require('amdefine')(module);
 }

@@ -8,6 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
+
 /**
  * The normalizer itself. The main entry point is function 'normalize', which takes
  * an AST to normalize and an object with options.

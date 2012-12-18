@@ -8,6 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
+
 /**
  * Convenience functions for constructing and navigating ASTs.
  */
