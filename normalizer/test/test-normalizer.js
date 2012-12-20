@@ -8,6 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
+
 /**
  * Unit tests for the normalizer. The actual test data is in directory 'data/'.
  * For every test 'foo', 'data/foo.js' is the original file, while
