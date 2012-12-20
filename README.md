@@ -6,6 +6,8 @@ There are currently three packages:
 * `cfg`: a package for building intraprocedural control flow graphs for programs that are already normalized
 * `common`: common modules used by the other packages
 
+See the packages' individual READMEs for more details.
+
 We hope to add other analysis and instrumentation infrastructure in the future.
 
 All code is available under the [Eclipse Public License](http://www.eclipse.org/legal/epl-v10.html).
