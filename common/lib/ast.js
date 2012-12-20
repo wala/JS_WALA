@@ -103,6 +103,13 @@ define(function(require, exports) {
     
     return nd[exports[nd.type].children[i]];
   };
+
+  var setChild = exports.setChild = function(nd, i, v) {
+    if(Array.isArray(nd))
+      return nd[i] = v;
+
+    return nd[exports[nd.type].children[i]] = v;
+  };
   
   var forEachChild = exports.forEachChild = function(nd, cb) {
     for(var i = 0, n = getNumChild(nd); i < n; ++i)
