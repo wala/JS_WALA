@@ -59,7 +59,7 @@ Note that `for` and `do` loops are desugared into `while` loops, `continue` stat
 
 If the normalizer is passed the `unfold_ifs` option, `if` statements are further simplified so that at most one of their branches is non-trivial, i.e., contains a non-empty statement.
 
-If the normalizer is passed the `unify_ret` option, every function only contains one single `return` statement at the very end of the function; all other `return` statements are converted into assignments to a result variable and a following `break` statement. The normalized program will not contain empty return statements of the form `return;`.
+If the normalizer is passed the `unify_ret` option, every function only contains one single `return` statement at the very end of the function; all other `return` statements are converted into assignments to a result variable and a following `break` statement. The name of the return variable is stored in attribute `ret_var` of the function AST node. The normalized program will not contain empty return statements of the form `return;`.
 
 
 

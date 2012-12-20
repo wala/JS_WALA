@@ -653,7 +653,7 @@ define(function(require, exports) {
           res = normalizeExpression(nd.expression);
           break;
           
-        // variable declarations are collected by normalizeFunction(); all we need to do here is to extract initializers into assignments
+        // variable declarations are collected by normalizeEntity(); all we need to do here is to extract initializers into assignments
         case 'VariableDeclaration':
           res = nd.declarations.flatmap(rec);
           break;
@@ -665,7 +665,7 @@ define(function(require, exports) {
             res = [];
           break;
         
-        // function declarations are collected by normalizeFunction() above
+        // function declarations are collected by normalizeEntity()
         case 'FunctionDeclaration':
           res = [];
           break;
@@ -958,7 +958,10 @@ define(function(require, exports) {
         if(localDecls.length > 0)
           body.unshift(new ast.VariableDeclaration(localDecls, 'var'));
 
-        return inheritPosition(new ast.FunctionExpression(root.id, root.params, new ast.BlockStatement(body)), root);
+        var fn_expr = new ast.FunctionExpression(root.id, root.params, new ast.BlockStatement(body));
+        if(ret_var)
+          ast.setAttribute(fn_expr, 'ret_var', ret_var);
+        return inheritPosition(fn_expr, root);
       } else if(root.type === 'Program') {
         var body = root.body.flatmap(function(stmt) { return normalizeStatement(stmt); });
   
