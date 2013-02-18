@@ -779,10 +779,11 @@ define(function(require, exports) {
           if(nd.left.type === 'VariableDeclaration') {
             res = rec(nd.left).concat(rec(new ast.ForInStatement(new ast.Identifier(nd.left.declarations[0].id.name), nd.right, nd.body)));
           } else if(nd.left.type === 'Identifier') {
-            // TODO: should introduce continue label as for while statements
-            var tmp = genTmp(), lbl = genTmp(true);
+            var tmp = genTmp(), brk_lbl = genTmp(true), cont_lbl = genTmp(true);
+
             var init = normalizeExpression(nd.right, tmp);
-            var body = normalizeStatement(nd.body, lbl, lbl);
+
+            var body = [new ast.LabeledStatement(new ast.Identifier(cont_lbl), mkBlock(normalizeStatement(nd.body, brk_lbl, cont_lbl)))];
         
             var loopVar;
             if(scope.isLocal(nd.left.name)) {
@@ -793,7 +794,7 @@ define(function(require, exports) {
                     .concat(body);
             }
         
-            res = init.concat(new ast.LabeledStatement(new ast.Identifier(lbl), 
+            res = init.concat(new ast.LabeledStatement(new ast.Identifier(brk_lbl), 
                                                        new ast.BlockStatement([new ast.ForInStatement(new ast.Identifier(loopVar), new ast.Identifier(tmp),
                                                                                                       mkBlock(body))])));
           } else {
