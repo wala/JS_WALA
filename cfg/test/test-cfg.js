@@ -26,8 +26,6 @@ function runtest(test, prog, facts, normalise) {
   dominators.buildDominatorTrees(ast, true);
   var actual = dumpCFG(ast);
   if(actual !== facts) {
-    require('fs').writeFileSync("/home/mschaefer/tmp/actual", actual);
-    require('fs').writeFileSync("/home/mschaefer/tmp/expected", facts);
     console.log("actual:\n" + actual);
     console.log("expected:\n" + facts); 
   }

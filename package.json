@@ -1,0 +1,13 @@
+{
+    "name": "dta",
+    "version": "0.1.0",
+    "author": "Max Schaefer <schaefer@ntu.edu.sg>",
+    "description": "simple dynamic type inference for JavaScript",
+    "dependencies" : {
+	"esprima": "*",
+	"escodegen": "*",
+	"nodeunit" : "*",
+	"amdefine" : "*"
+    },
+    "license": "Eclipse"
+}
