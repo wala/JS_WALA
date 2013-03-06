@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="normalizer-rhino" default="getDeps" basedir=".">
+  <target name="properties" if="eclipse.running">
+    <property name="build.compiler"
+	      value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+  </target>
+
+  <target name="init" depends="properties">
+    <property name="temp.folder" value="${basedir}/temp.folder"/>
+  </target>
+  
+  <target name="RhinoPresent" depends="init">
+    <available file="${basedir}/lib/js.jar" property="rhino.present"/>
+  </target>
+  
+  <target name="fetchRhino" depends="RhinoPresent" unless="rhino.present">
+    <delete dir="${temp.folder}"/>
+    <mkdir dir="${temp.folder}"/>
+    <get src="http://cloud.github.com/downloads/mozilla/rhino/rhino1_7R4.zip" 
+	 dest="${temp.folder}/rhino1_7R4.zip" />
+    <unzip src="${temp.folder}/rhino1_7R4.zip" dest="${temp.folder}"/>
+    <copy file="${temp.folder}/rhino1_7R4/js.jar" tofile="${basedir}/lib/js.jar" />
+    <delete dir="${temp.folder}"/>
+  </target>
+
+  <target name="fetchJs" depends="init">
+    <get src="https://raw.github.com/jrburke/r.js/master/dist/r.js"
+	 dest="${basedir}/js/r.js"/>
+    <get src="https://raw.github.com/ariya/esprima/master/esprima.js"
+	 dest="${basedir}/js/esprima.js"/>
+    <delete dir="${temp.folder}"/>
+    <mkdir dir="${temp.folder}"/>
+    <get src="https://github.com/wala/JS_WALA/archive/master.zip"
+	 dest="${temp.folder}/normalizer.zip"/>
+    <unzip src="${temp.folder}/normalizer.zip" dest="${temp.folder}"/>
+    <copydir src="${temp.folder}/JS_WALA-master/common"
+	  dest="${basedir}/js/common"/>
+    <copydir src="${temp.folder}/JS_WALA-master/normalizer"
+	  dest="${basedir}/js/normalizer"/>
+    <delete dir="${temp.folder}"/>
+    <get src="https://raw.github.com/Constellation/escodegen/master/escodegen.browser.js"
+	 dest="${basedir}/js/escodegen.browser.js"/>
+  </target>
+  
+  <target name="getDeps" depends="fetchRhino,fetchJs" />
+
+  <target name="clean">
+    <delete file="${basedir}/lib/js.jar"/>
+    <delete file="${basedir}/js/r.js"/>
+    <delete file="${basedir}/js/esprima.js"/>
+    <delete dir="${basedir}/js/common"/>
+    <delete dir="${basedir}/js/normalizer"/>
+    <delete file="${basedir}/js/escodegen.browser.js"/>
+  </target>
+</project>
