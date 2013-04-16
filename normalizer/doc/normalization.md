@@ -66,7 +66,7 @@ If the normalizer is passed the `unify_ret` option, every function only contains
 Position information
 --------------------
 
-If the original AST has position information, then so does the normalized AST, with every normarized AST node having the same position as the node it originated from.
+If the original AST has position information, then so does the normalized AST, with every normalized AST node having the same position as the node it originated from.
 
 However, we do not use the Esprima position annotations, which somewhat awkwardly distribute position information across several different properties.
 Instead, the position information for node `nd` is stored in `nd.attr.pos`, and uses the ADT defined in module `common/lib/position.js`.
