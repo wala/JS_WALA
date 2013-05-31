@@ -19,5 +19,5 @@ var normalizer = require("../lib/normalizer"),
 
 var src = fs.readFileSync(process.argv[2], 'utf-8');
 var ast = esprima.parse(src);
-var normalized = normalizer.normalize(ast);
-console.log(escodegen.generate(normalized));
+var normalized = normalizer.normalize(ast, { pp: escodegen.generate });
+console.log(escodegen.generate(normalized, { comment: true }));
