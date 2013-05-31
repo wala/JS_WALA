@@ -149,11 +149,11 @@ define(function(require, exports) {
   
   // positions are attached as attributes
   exports.hasPosition = function(nd) {
-    return !!exports.getAttribute(nd, 'pos');
+      return !!exports.getAttribute(nd, 'pos') || !!nd.loc || !!nd.range;
   };
   
   exports.getPosition = function(nd) {
-    if(!exports.hasPosition(nd)) {
+      if(!exports.getAttribute(nd, 'pos')) {
       var pos = position.DUMMY_POS.clone();
       if(nd.loc) {
         pos.start_line = nd.loc.start.line;
