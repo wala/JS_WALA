@@ -163,6 +163,9 @@ define(function(require, exports) {
         pos.start_offset = nd.range[0];
         pos.end_offset = nd.range[1];
       }
+	  if(nd.source) {
+	      pos.url = nd.source;
+	  }
       exports.setAttribute(nd, 'pos', pos);
     }
     return exports.getAttribute(nd, 'pos');
