@@ -156,6 +156,9 @@ define(function(require, exports) {
       if(!exports.getAttribute(nd, 'pos')) {
       var pos = position.DUMMY_POS.clone();
       if(nd.loc) {
+	  if(nd.loc.source) {
+	      pos.url = nd.loc.source;
+	  }
         pos.start_line = nd.loc.start.line;
         pos.end_line = nd.loc.start.line;
       }
