@@ -737,6 +737,10 @@ define(function(require, exports) {
           break;
         
         case 'TryStatement':
+          // handle incompatibility between Esprima and Acorn ASTs
+          if(!nd.handlers)
+            nd.handlers = nd.handler ? [nd.handler] : [];
+
           if(nd.handlers.length > 0 && nd.finalizer) {
             res = rec(new ast.TryStatement(new ast.BlockStatement([new ast.TryStatement(nd.block, nd.guardedHandlers, nd.handlers, null)]),
                                            [], [], nd.finalizer));
