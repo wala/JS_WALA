@@ -23,7 +23,6 @@ A program in JavaScript Normal Form (JSNF) obeys the following grammar:
              |  x = delete y;
              |  x = delete y[z];
              |  x = UNOP y;
-             |  x = y CREMENT;
              |  x = y BINOP z;
              |  x = f(y1, ..., yn);
              |  x = z[f](y1, ..., yn);
@@ -46,7 +45,7 @@ A program in JavaScript Normal Form (JSNF) obeys the following grammar:
              |  set p(x) { Stmt+ }
              
 Here, `x`, `y`, `z`, `f`, `p`, `l` and variants are names. The terminal `LITERAL` stands for a string, number, boolean or regular expression literal.
-`STRING` is a string literal; `UNOP` is a unary operator; `CREMENT` is `++` or `--`; `BINOP` is a binary operator.
+`STRING` is a string literal, `UNOP` is a unary operator, and `BINOP` is a binary operator.
 
 Names always refer to local variables, whereas references to global variables are rewritten into appropriate property reads or writes on `__global`.
 If the normalizer is passed the `reference_errors` option, reads of global variables will further be rewritten to throw a `ReferenceError` exception if the variable in question has not been declared or defined.
