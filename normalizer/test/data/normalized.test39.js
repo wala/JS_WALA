@@ -19,4 +19,4 @@
             tmp7 = tmp4(tmp6);
         }
     }
-})(this);
+})(typeof global === 'undefined' ? this : global);

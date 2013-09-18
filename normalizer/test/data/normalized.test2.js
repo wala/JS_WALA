@@ -1,4 +1,4 @@
 (function(__global) {
     var tmp0;
     tmp0 = "hello";
-})(this);
+})(typeof global === 'undefined' ? this : global);

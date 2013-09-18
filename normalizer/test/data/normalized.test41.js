@@ -20,4 +20,4 @@
             break tmp1;
         }
     }
-})(this);
+})(typeof global === 'undefined' ? this : global);

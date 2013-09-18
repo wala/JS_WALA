@@ -1026,10 +1026,11 @@ define(function(require, exports) {
         if(options.backwards_compatible)
           insertNoOpAfterFinalIf(body);
   
-        // whole program is wrapped into (function(__global) { ... })(this);
+        // whole program is wrapped into (function(__global) { ... })(typeof global === 'undefined' ? this : global);
         return new ast.Program([new ast.ExpressionStatement(new ast.CallExpression(new ast.FunctionExpression(null, [new ast.Identifier("__global")],
                                                                                                              new ast.BlockStatement(tmpdecls.concat(fundecls, body))),
-                                                                                   [new ast.ThisExpression()]))]);
+                                                                                   [new ast.ConditionalExpression(new ast.BinaryExpression('===', new ast.UnaryExpression('typeof', new ast.Identifier('global')), new ast.Literal('undefined')),
+                                                                                   								  new ast.ThisExpression(), new ast.Identifier("global"))]))]);
       }
     }
    

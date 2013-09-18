@@ -6,4 +6,4 @@
     tmp3 = {
         x: tmp0
     };
-})(this);
+})(typeof global === 'undefined' ? this : global);

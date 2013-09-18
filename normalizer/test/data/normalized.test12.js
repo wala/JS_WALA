@@ -1,1 +1,1 @@
-(function(__global) {})(this);
+(function(__global) {})(typeof global === 'undefined' ? this : global);

@@ -25,4 +25,4 @@
             tmp2 = tmp15 < tmp16;
         }
     }
-})(this);
+})(typeof global === 'undefined' ? this : global);

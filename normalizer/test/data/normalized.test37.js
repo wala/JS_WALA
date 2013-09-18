@@ -21,4 +21,4 @@
             }
         }
     }
-}(this));
+}(typeof global === 'undefined' ? this : global));

@@ -6,4 +6,4 @@
     } catch (e) {
 	;
     }
-})(this);
+})(typeof global === 'undefined' ? this : global);

@@ -9,4 +9,4 @@
     tmp2[tmp3] = tmp4;
     tmp0 = "oldTick";
     __global[tmp0] = tmp1;
-})(this);
+})(typeof global === 'undefined' ? this : global);

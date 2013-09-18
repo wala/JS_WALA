@@ -30,4 +30,4 @@
     };
     tmp13 = 10;
     tmp14 = tmp0(tmp13);
-})(this);
+})(typeof global === 'undefined' ? this : global);

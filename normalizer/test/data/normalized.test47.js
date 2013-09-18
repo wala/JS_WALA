@@ -4,4 +4,4 @@
     tmp1 = "alert";
     tmp2 = "Hi!";
     tmp3 = tmp0[tmp1](tmp2);
-})(this);
+})(typeof global === 'undefined' ? this : global);

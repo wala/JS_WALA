@@ -6,4 +6,4 @@
     tmp3 = __global[tmp4];
     tmp1 = tmp3();
     tmp5 = tmp0[tmp1];
-})(this);
+})(typeof global === 'undefined' ? this : global);

@@ -4,4 +4,4 @@
     tmp0 = __global[tmp2];
     tmp1 = "f";
     tmp3 = tmp0[tmp1];
-})(this);
+})(typeof global === 'undefined' ? this : global);

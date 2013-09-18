@@ -2,4 +2,4 @@
     var tmp0;
     tmp0 = "";
     throw tmp0;
-})(this);
+})(typeof global === 'undefined' ? this : global);

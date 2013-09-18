@@ -11,4 +11,4 @@
     }
     tmp0 = "x";
     __global[tmp0] = tmp1;
-})(this);
+})(typeof global === 'undefined' ? this : global);

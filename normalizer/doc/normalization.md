@@ -7,7 +7,7 @@ JavaScript Normal Form
 
 A program in JavaScript Normal Form (JSNF) obeys the following grammar:
 
-    Program ::= (function(__global) { Decl? Stmt* })(this);
+    Program ::= (function(__global) { Decl? Stmt* })(typeof global === 'undefined' ? this : global);
     
     Decl    ::= var x1, x2, ..., xn;
     

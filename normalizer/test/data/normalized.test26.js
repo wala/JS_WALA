@@ -2,4 +2,4 @@
     lbl: {
         break lbl;
     }
-})(this);
+})(typeof global === 'undefined' ? this : global);

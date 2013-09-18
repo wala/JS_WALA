@@ -40,4 +40,4 @@
     };
     tmp15 = 'h';
     __global[tmp15] = tmp16;
-}(this));
+}(typeof global === 'undefined' ? this : global));

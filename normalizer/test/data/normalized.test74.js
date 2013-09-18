@@ -10,4 +10,4 @@
     tmp4 = tmp5 + tmp6;
     tmp3 = 't';
     __global[tmp3] = tmp4;
-}(this));
+}(typeof global === 'undefined' ? this : global));

@@ -7,4 +7,4 @@
     tmp4 = 1;
     tmp0 = tmp3 + tmp4;
     tmp1[tmp2] = tmp0;
-})(this);
+})(typeof global === 'undefined' ? this : global);

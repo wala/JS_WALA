@@ -28,4 +28,4 @@
             tmp2 = tmp6 < tmp7;
         }
     }
-})(this);
+})(typeof global === 'undefined' ? this : global);

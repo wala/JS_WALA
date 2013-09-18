@@ -8,4 +8,4 @@
     tmp6 = 19;
     tmp4 = tmp5 + tmp6;
     tmp7 = tmp0[tmp1](tmp3, tmp4);
-})(this);
+})(typeof global === 'undefined' ? this : global);

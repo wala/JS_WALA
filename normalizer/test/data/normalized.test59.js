@@ -16,4 +16,4 @@
     };
     tmp0 = "f";
     __global[tmp0] = tmp1;
-})(this);
+})(typeof global === 'undefined' ? this : global);

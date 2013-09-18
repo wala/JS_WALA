@@ -4,4 +4,4 @@
             break lbl1;
         }
     }
-})(this);
+})(typeof global === 'undefined' ? this : global);

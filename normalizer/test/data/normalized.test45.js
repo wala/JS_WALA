@@ -17,4 +17,4 @@
         tmp9 = "done";
         tmp10 = tmp7(tmp9);
     }
-})(this);
+})(typeof global === 'undefined' ? this : global);

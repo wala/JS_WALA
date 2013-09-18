@@ -16,4 +16,4 @@
     tmp1 = "getPlatform";
     tmp0 = __global[tmp1];
     tmp2 = tmp0();
-})(this);
+})(typeof global === 'undefined' ? this : global);

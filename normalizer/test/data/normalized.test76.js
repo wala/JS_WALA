@@ -3,4 +3,4 @@
     tmp0 = 1;
     tmp1 = 2;
     tmp2 = 3;
-})(this);
+})(typeof global === 'undefined' ? this : global);

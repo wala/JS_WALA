@@ -1,3 +1,3 @@
 (function(__global) {
     debugger;
-})(this);
+})(typeof global === 'undefined' ? this : global);

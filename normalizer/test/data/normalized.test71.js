@@ -8,4 +8,4 @@
         return tmp1;
     };
     tmp4 = tmp0();
-})(this);
+})(typeof global === 'undefined' ? this : global);
