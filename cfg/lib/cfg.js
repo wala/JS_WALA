@@ -261,6 +261,8 @@ define(function(require, exports) {
       case 'TryStatement':
         addEdge(stmt, stmt.block.body[0]);
         if(!stmt.finalizer) {
+          // Deal with incompatibility between Esprima and Acorn ASTs
+          if(!stmt.handlers) stmt.handlers = stmt.handler ? [stmt.handler] : [];
           // try-catch
           context[context.length] = { type: 'catch', next: stmt.handlers[0].body.body[0] };
           buildStmtCFG(stmt.block, following, context, accu);
